@@ -1,6 +1,6 @@
 {
 	"name": "railway-bootstrap",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Render Twitter Bootstrap HTML forms with RailwayJS models",
 	"keywords": ["form", "builder", "twitter", "bootstrap", "railway", "railwayjs"],
 	"author": { "name": "Matt Huggins", "email": "matt.huggins@gmail.com", "url": "http://www.matthuggins.com/" },
