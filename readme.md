@@ -8,11 +8,12 @@ and CSS classes.
 Requirements:
 -------------
 Railway Bootstrap requires [RailwayJS](https://github.com/1602/express-on-railway)
-v2.6+.  The plugin may work with earlier version of RailwayJS, but it untested.
+v2.6+.  The plugin may work with earlier version of RailwayJS, but is untested.
 
-Additionally, RailwayJS uses EJS for rendering view templates by default.  While
-RailwayJS is capable of working with the [Jade](http://jade-lang.com/) rendering
-engine, Railway Bootstrap has not yet been tested with Jade.
+Additionally, RailwayJS uses [EJS](https://github.com/visionmedia/ejs) for
+rendering view templates by default.  While RailwayJS is capable of working with
+the [Jade](http://jade-lang.com/) rendering engine, Railway Bootstrap has not yet
+been tested with Jade.
 
 Installation:
 -------------
