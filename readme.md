@@ -20,11 +20,11 @@ Install the package via npm:
 
     > npm install railway-bootstrap
 
-Within your RailwayJS app, the Railway-Bootstrap plugin needs to be initialized.
-Create a new initializer under `config/initializers/helpers.js`, and paste the
-following code:
+The Railway-Bootstrap plugin still needs to be initialized in your RailwayJS app.
+In the root folder of your app, open (or create if it doesn't exist) `npmfile.js`,
+and paste the following code:
 
-    require('railway-bootstrap').init();
+    require('railway-bootstrap');
 
 Usage:
 ------
