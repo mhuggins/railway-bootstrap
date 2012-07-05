@@ -71,9 +71,7 @@ for more details on form types.)
 
 Finally, for either format of `bootstrapFormFor` that is used, the `callback`
 parameter will be provided with `form` object.  This object provides several
-methods used for rendering form fields.  By default, each field is wrapped
-according to Twitter Bootstrap's [horizontal form](http://twitter.github.com/bootstrap/base-css.html#forms)
-format with an accompanying label.
+methods used for rendering form fields.
 
 The `form` object that is provided to your callback has the following methods
 available:
