@@ -87,6 +87,8 @@ of form being rendered.  The first is to use the `type` option when calling
 `bootstrapFormFor`.
 
     bootstrapFormFor(user, { type: 'horizontal' }, function (form) { ... });
+    bootstrapFormFor(user, { type: 'vertical' }, function (form) { ... });
+    bootstrapFormFor(user, { type: 'inline' }, function (form) { ... });
 
 Additionally, there are helper methods provided for each of the types of forms
 implemented.
