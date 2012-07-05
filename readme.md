@@ -54,19 +54,29 @@ key/value pairs included in the object will be converted to HTML attributes on t
 
 This will produce the following HTML:
 
-    <form class="form-horizontal" action="/users/new" method="post">
+    <form class="well" action="/users/new" method="post">
         <input type="hidden" name="authenticity_token" value="f46d9de27e45fef8dce10a36dcdc7be7fa8612af" />
         <input type="hidden" name="_method" value="PUT" />
         <!-- any other calls made on the form object will render here -->
     </form>
 
-For either format of `bootstrapFormFor` that is used, the `callback` parameter
-will be provided with `form` object.  This object provides several methods used
-for rendering form fields.  By default, each field is wrapped according to
-Twitter Bootstrap's [horizontal form](http://twitter.github.com/bootstrap/base-css.html#forms)
-format with an accompanying label
+The type of the Bootstrap form that you want to use can be provided in the
+`options` parameter as well.  Currently, only "vertical" and "horizontal" are
+provided, with "vertical" being the default.  The available types map to the
+following CSS classes.  (See the [Forms section of the Twitter Bootstrap docs](http://twitter.github.com/bootstrap/base-css.html#forms)
+for more details on form types.)
 
-The following methods are provided:
+* `vertical` = `form-vertical`
+* `horizontal` = `form-horizontal`
+
+Finally, for either format of `bootstrapFormFor` that is used, the `callback`
+parameter will be provided with `form` object.  This object provides several
+methods used for rendering form fields.  By default, each field is wrapped
+according to Twitter Bootstrap's [horizontal form](http://twitter.github.com/bootstrap/base-css.html#forms)
+format with an accompanying label.
+
+The `form` object that is provided to your callback has the following methods
+available:
 
 * `input (name, options)`: Creates an `<input>` element, where `name` is the name of
   the resource's property to render.  If no `options` are provided, the input type
@@ -84,4 +94,4 @@ Created By:
 
 License:
 --------
-Railway-Bootstrap is released under the [MIT license](http://www.opensource.org/licenses/MIT).
+Railway Bootstrap is released under the [MIT license](http://www.opensource.org/licenses/MIT).
