@@ -40,19 +40,24 @@ Assume that your application has a `User` model with properties `username`,
         <%- form.textarea('description') %>
     <% }) %>
 
-The `bootstrapFormFor` helper method can accept parameters in the following
-formats:
+The `bootstrapFormFor` helper method has two valid signatures:
 
 1. `bootstrapFormFor(resource, callback)`
 2. `bootstrapFormFor(resource, options, callback)`
 
-In the second format, the `options` parameter represent a basic JS object.  Any
-key/value pairs included in the object will be converted to HTML attributes on the
-`<form>` DOM object.  For example:
+The parameters are defined as follows:
+
+* `resource`: An instance of a model that the form will represent.
+* `options`: A simple object that includes any extra attributes you wish to
+  define on the form, in addition to a `type` option that is explained in
+  more detail below.
+* `callback`: A function that is used for defining fields within the form.
+
+Below is a simple example of how you might use this helper method.
 
     bootstrapFormFor(user, { action: '/users/new', method: 'put' }, function (form) { ... });
 
-This will produce the following HTML:
+This example produces HTML like the following:
 
     <form class="well" action="/users/new" method="post">
         <input type="hidden" name="authenticity_token" value="f46d9de27e45fef8dce10a36dcdc7be7fa8612af" />
@@ -60,21 +65,9 @@ This will produce the following HTML:
         <!-- any other calls made on the form object will render here -->
     </form>
 
-The type of the Bootstrap form that you want to use can be provided in the
-`options` parameter as well.  Currently, only "vertical" and "horizontal" are
-provided, with "vertical" being the default.  The available types map to the
-following CSS classes.  (See the [Forms section of the Twitter Bootstrap docs](http://twitter.github.com/bootstrap/base-css.html#forms)
-for more details on form types.)
-
-* `vertical` = `form-vertical`
-* `horizontal` = `form-horizontal`
-
-Finally, for either format of `bootstrapFormFor` that is used, the `callback`
-parameter will be provided with `form` object.  This object provides several
-methods used for rendering form fields.
-
-The `form` object that is provided to your callback has the following methods
-available:
+When using `bootstrapFormFor`, the `callback` parameter will be provided with a
+`form` object as the only parameter.  This object provides several methods that
+can be used for rendering form fields.
 
 * `input (name, options)`: Creates an `<input>` element, where `name` is the name of
   the resource's property to render.  If no `options` are provided, the input type
@@ -85,6 +78,25 @@ available:
   is the name of the resource's property to render.
 * `submit (label, options)`: Creates a `<button type="submit">` element, where
   `label` is the text to be rendered on the button.
+
+Form Types
+----------
+This plugin implements three of the Twitter Bootstraps form types: vertical
+(the default), horizontal, and inline.  There are two ways to change the type
+of form being rendered.  The first is to use the `type` option when calling
+`bootstrapFormFor`.
+
+    bootstrapFormFor(user, { type: 'horizontal' }, function (form) { ... });
+
+Additionally, there are helper methods provided for each of the types of forms
+implemented.
+
+    horizontalFormFor(user, function (form) { ... });
+    verticalFormFor(user, function (form) { ... });
+    inlineFormFor(user, function (form) { ... });
+
+Refer to the [Forms section of the Twitter Bootstrap docs](http://twitter.github.com/bootstrap/base-css.html#forms)
+for more details on and examples of form types.
 
 Created By:
 -----------
